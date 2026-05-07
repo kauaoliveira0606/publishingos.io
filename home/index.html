@@ -23,54 +23,50 @@
     <span class="text-2xl font-extrabold text-slate-900">Publishing<span class="text-amber-500">OS</span></span>
   </header>
 
-  <main class="max-w-2xl mx-auto px-4 py-8 space-y-6">
-
+  <main class="max-w-2xl mx-auto px-4 py-8">
 
     <!-- HERO -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 text-center">
+    <div class="text-center mb-8">
       <p class="text-amber-600 font-semibold text-sm mb-3">For busy professionals who want smarter ways to earn...</p>
-      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-3">
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-3">
         This is how you can build a digital asset book business with 1–2 hours a day that Generates you passive income
-      </h2>
+      </h1>
       <p class="text-slate-500 text-sm italic">(without needing any Book-writing or publishing experience)</p>
     </div>
 
-    <!-- VIDEO SECTION -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 text-center">
-      <h2 class="text-xl font-extrabold text-slate-900 mb-1">This Video Explains Everything You need to know...</h2>
-      <p class="text-slate-500 text-sm mb-5">A button will pop up to apply in 5 minutes</p>
+    <!-- VIDEO -->
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;" class="mb-8">
+      <iframe src="https://fast.wistia.net/embed/iframe/uyragvyb2p?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"></iframe>
+    </div>
 
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;" class="mb-6">
-        <iframe src="https://fast.wistia.net/embed/iframe/uyragvyb2p?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"></iframe>
+    <!-- COUNTDOWN -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
+        <div id="vsl-hours" class="text-white text-2xl font-extrabold leading-none">00</div>
+        <div class="text-slate-400 text-xs mt-1">Hours</div>
       </div>
-
-      <!-- Countdown -->
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-          <div id="vsl-hours" class="text-white text-2xl font-extrabold leading-none">00</div>
-          <div class="text-slate-400 text-xs mt-1">Hours</div>
-        </div>
-        <div class="text-slate-400 text-2xl font-bold">:</div>
-        <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-          <div id="vsl-minutes" class="text-white text-2xl font-extrabold leading-none">00</div>
-          <div class="text-slate-400 text-xs mt-1">Minutes</div>
-        </div>
-        <div class="text-slate-400 text-2xl font-bold">:</div>
-        <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-          <div id="vsl-seconds" class="text-white text-2xl font-extrabold leading-none">00</div>
-          <div class="text-slate-400 text-xs mt-1">Seconds</div>
-        </div>
+      <div class="text-slate-400 text-2xl font-bold">:</div>
+      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
+        <div id="vsl-minutes" class="text-white text-2xl font-extrabold leading-none">00</div>
+        <div class="text-slate-400 text-xs mt-1">Minutes</div>
       </div>
+      <div class="text-slate-400 text-2xl font-bold">:</div>
+      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
+        <div id="vsl-seconds" class="text-white text-2xl font-extrabold leading-none">00</div>
+        <div class="text-slate-400 text-xs mt-1">Seconds</div>
+      </div>
+    </div>
 
+    <div class="text-center mb-12">
       <a href="#apply" class="btn-pulse inline-block bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-lg px-10 py-4 rounded-2xl transition">
         Click Here To Apply To Work With Us →
       </a>
     </div>
 
     <!-- TESTIMONIALS -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 text-center">
+    <div class="text-center mb-8">
       <h2 class="text-xl font-extrabold text-slate-900 mb-6">Here's What Some Of Our Students Are Saying About The Program</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
         <div class="bg-slate-100 rounded-xl aspect-square flex items-center justify-center">
           <p class="text-slate-400 text-sm">Testimonial</p>
         </div>
@@ -92,7 +88,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-black py-10 px-6 text-center mt-6">
+  <footer class="bg-black py-10 px-6 text-center">
     <div class="max-w-2xl mx-auto">
       <p class="text-white font-extrabold text-xl mb-4">Publishing<span class="text-amber-500">OS</span></p>
       <div class="flex justify-center gap-8 mb-6">
@@ -107,14 +103,11 @@
   </footer>
 
   <script>
-    // 5-minute VSL countdown
     const vslTarget = new Date(Date.now() + 5 * 60 * 1000);
     function updateVSL() {
       const diff = vslTarget - new Date();
       if (diff <= 0) {
-        document.getElementById('vsl-hours').textContent = '00';
-        document.getElementById('vsl-minutes').textContent = '00';
-        document.getElementById('vsl-seconds').textContent = '00';
+        ['vsl-hours','vsl-minutes','vsl-seconds'].forEach(id => document.getElementById(id).textContent = '00');
         return;
       }
       document.getElementById('vsl-hours').textContent   = String(Math.floor(diff / (1000*60*60))).padStart(2,'0');
