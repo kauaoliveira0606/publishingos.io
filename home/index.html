@@ -39,29 +39,8 @@
       <iframe src="https://fast.wistia.net/embed/iframe/uyragvyb2p?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"></iframe>
     </div>
 
-    <!-- COUNTDOWN -->
-    <div class="flex items-center justify-center gap-3 mb-8">
-      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-        <div id="vsl-hours" class="text-white text-2xl font-extrabold leading-none">00</div>
-        <div class="text-slate-400 text-xs mt-1">Hours</div>
-      </div>
-      <div class="text-slate-400 text-2xl font-bold">:</div>
-      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-        <div id="vsl-minutes" class="text-white text-2xl font-extrabold leading-none">00</div>
-        <div class="text-slate-400 text-xs mt-1">Minutes</div>
-      </div>
-      <div class="text-slate-400 text-2xl font-bold">:</div>
-      <div class="text-center bg-slate-900 rounded-xl px-4 py-3 min-w-[64px]">
-        <div id="vsl-seconds" class="text-white text-2xl font-extrabold leading-none">00</div>
-        <div class="text-slate-400 text-xs mt-1">Seconds</div>
-      </div>
-    </div>
-
-    <div class="text-center mb-12">
-      <a href="#apply" class="btn-pulse inline-block bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-lg px-10 py-4 rounded-2xl transition">
-        Click Here To Apply To Work With Us →
-      </a>
-    </div>
+    <!-- TYPEFORM PLACEHOLDER -->
+    <div id="typeform-embed" class="mb-12"></div>
 
     <!-- TESTIMONIALS -->
     <div class="text-center mb-8">
@@ -103,19 +82,6 @@
   </footer>
 
   <script>
-    const vslTarget = new Date(Date.now() + 5 * 60 * 1000);
-    function updateVSL() {
-      const diff = vslTarget - new Date();
-      if (diff <= 0) {
-        ['vsl-hours','vsl-minutes','vsl-seconds'].forEach(id => document.getElementById(id).textContent = '00');
-        return;
-      }
-      document.getElementById('vsl-hours').textContent   = String(Math.floor(diff / (1000*60*60))).padStart(2,'0');
-      document.getElementById('vsl-minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
-      document.getElementById('vsl-seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
-    }
-    updateVSL();
-    setInterval(updateVSL, 1000);
   </script>
 
 </body>
