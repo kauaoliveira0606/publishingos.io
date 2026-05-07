@@ -17,6 +17,15 @@
       flex-shrink: 0;
     }
     #countdown { font-variant-numeric: tabular-nums; }
+    @keyframes barberpole {
+      from { background-position: 0 0; }
+      to { background-position: 40px 0; }
+    }
+    .progress-animated {
+      background: repeating-linear-gradient(45deg, #f97316, #f97316 10px, #fb923c 10px, #fb923c 20px);
+      background-size: 40px 40px;
+      animation: barberpole 0.6s linear infinite;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
@@ -24,7 +33,7 @@
   <!-- STICKY COUNTDOWN -->
   <div class="sticky top-0 z-50 bg-amber-500 border-b border-amber-600 py-3 px-4">
     <div class="max-w-2xl mx-auto flex items-center justify-center gap-1">
-      <p class="text-white text-xs font-semibold uppercase tracking-widest mr-4 hidden sm:block">Workshop starts in</p>
+      <p class="text-white text-xs font-semibold uppercase tracking-widest mr-4">Workshop starts in</p>
       <div class="flex gap-3">
         <div class="text-center min-w-[52px]">
           <div id="cd-days" class="text-white text-2xl font-extrabold leading-none">00</div>
@@ -53,14 +62,14 @@
   <div class="bg-white border-b border-slate-100 px-4 py-3">
     <div class="max-w-2xl mx-auto">
       <div class="relative w-full bg-slate-100 rounded overflow-hidden h-10">
-        <div class="absolute inset-y-0 left-0 w-[92%] flex items-center justify-center" style="background: repeating-linear-gradient(45deg, #f97316, #f97316 10px, #fb923c 10px, #fb923c 20px);">
+        <div class="progress-animated absolute inset-y-0 left-0 w-[92%] flex items-center justify-center">
           <span class="text-white text-sm font-bold italic drop-shadow">Almost Complete...</span>
         </div>
       </div>
     </div>
   </div>
 
-  <main class="max-w-2xl mx-auto px-4 pt-4 pb-10">
+  <main class="max-w-2xl mx-auto px-4 pt-3 pb-10">
 
     <!-- CONGRATS HERO -->
     <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 text-center mb-3">
@@ -71,7 +80,7 @@
     </div>
 
     <!-- STEP 1 -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3 last:mb-0">
       <div class="flex items-center gap-3 mb-5">
         <div class="step-number">1</div>
         <h2 class="text-lg font-extrabold text-slate-900">Watch This 2-Minute Video In Full</h2>
@@ -89,14 +98,14 @@
     </div>
 
     <!-- STEP 2 -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3 last:mb-0">
       <div class="flex items-center gap-3 mb-5">
         <div class="step-number">2</div>
         <h2 class="text-lg font-extrabold text-slate-900">Pre-Workshop Checklist</h2>
       </div>
 
       <!-- Option A -->
-      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-4">
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-3">
         <p class="text-base font-extrabold text-amber-600 mb-2">A) Add to Calendar</p>
         <p class="text-slate-600 text-sm mb-4">Click below to add the event to your calendar and receive the session join link.</p>
         <a href="https://calget.com/e/publishing-os-event" target="_blank" rel="noopener noreferrer" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-center py-3.5 px-6 rounded-xl transition text-sm">
@@ -120,7 +129,7 @@
     </div>
 
     <!-- STEP 3 -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3 last:mb-0">
       <div class="flex items-center gap-3 mb-5">
         <div class="step-number">3</div>
         <h2 class="text-lg font-extrabold text-slate-900">Join Our Free Skool Community</h2>
@@ -133,7 +142,7 @@
     </div>
 
     <!-- STEP 4 -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3 last:mb-0">
       <div class="flex items-center gap-3 mb-5">
         <div class="step-number">4</div>
         <h2 class="text-lg font-extrabold text-slate-900">Watch these FAQ's</h2>
@@ -198,7 +207,7 @@
     </div>
 
     <!-- STEP 5 -->
-    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-3 last:mb-0">
       <div class="flex items-center gap-3 mb-5">
         <div class="step-number">5</div>
         <h2 class="text-lg font-extrabold text-slate-900">Additional Preparation Videos from Tommi</h2>
