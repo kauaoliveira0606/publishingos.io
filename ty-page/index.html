@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Registered! — PublishingOS Workshop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .step-number {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #F59E0B; color: white;
+      font-weight: 800; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #countdown { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+  <!-- TOP BAR -->
+  <div class="bg-amber-500 py-3 px-4 text-center text-white text-sm font-semibold">
+    ⚠️ IMPORTANT: Complete all steps below to secure your spot and receive your bonuses
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-slate-100 py-4 px-6 text-center">
+    <a href="/workshop" class="text-2xl font-extrabold text-slate-900">Publishing<span class="text-amber-500">OS</span></a>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 py-10">
+
+    <!-- CONGRATS HERO -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 text-center mb-8">
+      <div class="text-5xl mb-4">🎉</div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-3">
+        Congratulations! Your spot is reserved for the Workshop on Tuesday at 6PM EST
+      </h1>
+      <p class="text-slate-500 text-sm">Complete all the steps below to make sure you're fully prepared and don't miss out on your free bonuses.</p>
+
+      <!-- COUNTDOWN -->
+      <div class="mt-6 bg-slate-900 rounded-xl px-6 py-4 inline-block">
+        <p class="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-2">Workshop starts in</p>
+        <div id="countdown" class="text-white text-3xl font-extrabold tracking-tight">
+          00:00:00:00
+        </div>
+        <p class="text-slate-400 text-xs mt-1">Days &nbsp;·&nbsp; Hours &nbsp;·&nbsp; Minutes &nbsp;·&nbsp; Seconds</p>
+      </div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 mb-5">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="step-number">1</div>
+        <h2 class="text-lg font-extrabold text-slate-900">Watch This 2-Minute Video In Full</h2>
+      </div>
+      <!-- Video placeholder -->
+      <div class="bg-slate-100 rounded-xl aspect-video flex items-center justify-center mb-5">
+        <div class="text-center">
+          <div class="text-4xl mb-2">▶️</div>
+          <p class="text-slate-500 text-sm">Video Loading...</p>
+        </div>
+      </div>
+      <p class="text-slate-600 text-sm font-semibold mb-3">Watch the full video to unlock your free bonuses:</p>
+      <ul class="space-y-2 text-sm text-slate-600">
+        <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span> <span><strong>36 Game-Changing Claude Prompts</strong> for eBook Publishing</span></li>
+        <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span> <span><strong>Profitable Niche-Finding Tool</strong> to identify winning topics</span></li>
+        <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span> <span><strong>Live Q&amp;A Session</strong> with Tommi during the workshop</span></li>
+        <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span> <span><strong>System for identifying profitable niches</strong> with real examples</span></li>
+      </ul>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 mb-5">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="step-number">2</div>
+        <h2 class="text-lg font-extrabold text-slate-900">Pre-Workshop Checklist</h2>
+      </div>
+
+      <!-- Option A -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-4">
+        <p class="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2">Option A — Add to Calendar</p>
+        <p class="text-slate-600 text-sm mb-4">Click below to add the event to your calendar and receive the session join link.</p>
+        <a href="#" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-center py-3.5 px-6 rounded-xl transition text-sm">
+          📅 Add This Event To Your Calendar
+        </a>
+      </div>
+
+      <!-- Option B -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Option B — Confirm by Email</p>
+        <p class="text-slate-600 text-sm mb-3">Check your inbox for an email with the subject line:</p>
+        <div class="bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm font-semibold text-slate-800 mb-3">
+          📧 "[URGENT! READ BEFORE WORKSHOP]"
+        </div>
+        <ul class="text-sm text-slate-600 space-y-2">
+          <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">1.</span> Open the email and reply with <strong>"yes"</strong></li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">2.</span> Mark it as <strong>important</strong> so it doesn't go to spam</li>
+          <li class="flex items-start gap-2"><span class="text-slate-400">⚠️</span> <span class="text-slate-500">If you don't see it within 30 minutes, check your spam or promotions folder</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 mb-5">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="step-number">3</div>
+        <h2 class="text-lg font-extrabold text-slate-900">Join Our Free Skool Community</h2>
+      </div>
+      <p class="text-slate-600 text-sm mb-2">Get instant access to <strong>4+ hours of FREE education</strong> inside our community while you wait for the workshop.</p>
+      <p class="text-slate-500 text-sm mb-5">Connect with thousands of other publishers, ask questions, and start learning before the live session even begins.</p>
+      <a href="#" class="block w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-center py-3.5 px-6 rounded-xl transition text-sm">
+        🎓 Get Access Here — It's Free
+      </a>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 mb-5">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="step-number">4</div>
+        <h2 class="text-lg font-extrabold text-slate-900">Video Library — Watch Before the Workshop</h2>
+      </div>
+      <p class="text-slate-500 text-sm mb-5">Get a head start with these short videos that answer the most common questions before we go live.</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">How much startup capital do you actually need?</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">KDP exit opportunities — what's possible?</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">Amazon compliance and AI publishing — what you need to know</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">Package breakdown — what's included</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">How to handle online comments as a publisher</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">How to pick the right books to publish</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">Real profit margins — what to expect</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">The 80/20 AI workflow breakdown</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">How KDP payouts work</span>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 rounded-xl p-4 hover:bg-amber-50 transition cursor-pointer border border-slate-100">
+          <span class="text-amber-500 font-bold text-sm">▶</span>
+          <span class="text-sm font-medium text-slate-700">How many hours per week does this really take?</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="step-number">5</div>
+        <h2 class="text-lg font-extrabold text-slate-900">Additional Preparation Videos from Tommi</h2>
+      </div>
+      <p class="text-slate-600 text-sm mb-5">Tommi has put together extra videos to help you show up to the workshop fully prepared and ready to take action.</p>
+      <div class="bg-slate-100 rounded-xl aspect-video flex items-center justify-center">
+        <div class="text-center">
+          <div class="text-4xl mb-2">▶️</div>
+          <p class="text-slate-500 text-sm">Video Loading...</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-10 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <a href="/workshop" class="text-xl font-extrabold text-white mb-6 block">Publishing<span class="text-amber-500">OS</span></a>
+      <p class="text-slate-400 text-xs mb-4 max-w-xl mx-auto">
+        Operated by Nespola LTD. We don't believe in get-rich-quick programs. We believe in hard work, adding value and serving others. We do not make any guarantees about your ability to get results or earn any money with our ideas, information, tools, or strategies.
+      </p>
+      <div class="flex justify-center gap-6 text-xs text-slate-400 mb-4">
+        <a href="/terms" class="hover:text-white transition">Terms &amp; Conditions</a>
+        <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">About Us</a>
+        <a href="#" class="hover:text-white transition">Resources</a>
+      </div>
+      <p class="text-slate-600 text-xs">© 2026 PublishingOS / Nespola LTD. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown to next Tuesday at 6PM EST
+    function getNextTuesdayEST() {
+      const now = new Date();
+      const estOffset = -5 * 60; // EST offset in minutes
+      const utcOffset = now.getTimezoneOffset();
+      const estNow = new Date(now.getTime() + (utcOffset + estOffset) * 60000);
+      const day = estNow.getDay(); // 0=Sun,1=Mon,2=Tue,...
+      const daysUntilTuesday = (2 - day + 7) % 7 || 7;
+      const target = new Date(estNow);
+      target.setDate(estNow.getDate() + daysUntilTuesday);
+      target.setHours(18, 0, 0, 0);
+      return new Date(target.getTime() - (utcOffset + estOffset) * 60000);
+    }
+
+    function updateCountdown() {
+      const target = getNextTuesdayEST();
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').textContent = 'LIVE NOW!';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('countdown').textContent =
+        String(days).padStart(2,'0') + ':' +
+        String(hours).padStart(2,'0') + ':' +
+        String(minutes).padStart(2,'0') + ':' +
+        String(seconds).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
