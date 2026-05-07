@@ -1,11 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PublishingOS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PublishingOS — Free Live Workshop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#F59E0B',
+            dark: '#0F172A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-  <h1>Coming Soon</h1>
+<body class="font-sans text-slate-800 bg-white">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="text-xl font-bold text-dark">Publishing<span class="text-brand">OS</span></span>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#learn" class="hover:text-brand transition">What You'll Learn</a>
+        <a href="#instructor" class="hover:text-brand transition">Instructor</a>
+        <a href="#who" class="hover:text-brand transition">Who It's For</a>
+        <a href="#register" class="hover:text-brand transition">Register</a>
+      </div>
+      <a href="#register" class="bg-brand text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-yellow-500 transition">
+        Reserve My Spot →
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-20 px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide">
+        Free Live Workshop
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6">
+        How Beginners Are Building an<br class="hidden md:block" />
+        <span class="text-brand">eBook Business</span> That Generates<br class="hidden md:block" />
+        Predictable Passive Income Using AI
+      </h1>
+      <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto">
+        Designed for busy people who want smarter ways to earn — no writing experience, no tech skills, and no inventory required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a href="#register" class="bg-brand text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-yellow-500 transition shadow-lg shadow-amber-200">
+          Join The Workshop — It's Free →
+        </a>
+        <a href="#learn" class="border border-slate-200 text-slate-700 font-semibold text-lg px-8 py-4 rounded-xl hover:bg-slate-50 transition">
+          See What You'll Learn
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+          <div class="text-3xl font-extrabold text-dark">$3M+</div>
+          <div class="text-sm text-slate-500 mt-1">Generated with this system</div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+          <div class="text-3xl font-extrabold text-dark">10,000+</div>
+          <div class="text-sm text-slate-500 mt-1">People already publishing</div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+          <div class="text-3xl font-extrabold text-dark">1–2 hrs</div>
+          <div class="text-sm text-slate-500 mt-1">Per day commitment</div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+          <div class="text-3xl font-extrabold text-dark">6 years</div>
+          <div class="text-sm text-slate-500 mt-1">Proven & battle-tested</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="bg-dark py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          You want extra income — but every path feels out of reach.
+        </h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">Most online business models require time, capital, or skills you don't have. This one doesn't.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 rounded-2xl p-7">
+          <div class="text-3xl mb-4">⏰</div>
+          <h3 class="text-white font-bold text-lg mb-2">No time to start</h3>
+          <p class="text-slate-400 text-sm">You have a full schedule. Most businesses demand 8+ hours a day. This model works in 1–2 hours.</p>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-7">
+          <div class="text-3xl mb-4">✍️</div>
+          <h3 class="text-white font-bold text-lg mb-2">You're not a writer</h3>
+          <p class="text-slate-400 text-sm">You don't need to be. AI handles the writing. You focus on strategy and scaling.</p>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-7">
+          <div class="text-3xl mb-4">💸</div>
+          <h3 class="text-white font-bold text-lg mb-2">No startup capital</h3>
+          <p class="text-slate-400 text-sm">No inventory. No warehouses. No upfront costs. Digital products cost nothing to replicate.</p>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-7">
+          <div class="text-3xl mb-4">🤯</div>
+          <h3 class="text-white font-bold text-lg mb-2">No tech background</h3>
+          <p class="text-slate-400 text-sm">If you can use a smartphone, you can do this. AI removes every technical barrier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-20 px-6 bg-slate-50">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">The system is simple</h2>
+      <p class="text-slate-500 text-lg mb-14">Three steps. Repeatable. Scalable. Working from home.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-brand/10 text-brand font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="font-bold text-xl text-dark mb-3">Build</h3>
+          <p class="text-slate-500 text-sm">Use AI to research, write, and produce eBooks in profitable niches — without writing a single word yourself.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-brand/10 text-brand font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="font-bold text-xl text-dark mb-3">Launch</h3>
+          <p class="text-slate-500 text-sm">Publish to the world's largest digital marketplaces where millions of buyers are already searching every day.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-brand/10 text-brand font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="font-bold text-xl text-dark mb-3">Scale</h3>
+          <p class="text-slate-500 text-sm">Grow your portfolio of compounding digital assets — each one earning passively, around the clock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section id="learn" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">What you'll learn in this workshop</h2>
+        <p class="text-slate-500 text-lg">One live session. Five breakthroughs that change how you see online income.</p>
+      </div>
+      <div class="space-y-5">
+        <div class="flex gap-6 bg-slate-50 rounded-2xl p-7 border border-slate-100">
+          <div class="text-brand font-extrabold text-2xl shrink-0">01</div>
+          <div>
+            <h3 class="font-bold text-dark text-lg mb-1">Why AI Publishing is the best opportunity of the decade</h3>
+            <p class="text-slate-500 text-sm">Understand the business model, the timing window, and why early movers in AI publishing are locking in long-term advantages right now.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 bg-slate-50 rounded-2xl p-7 border border-slate-100">
+          <div class="text-brand font-extrabold text-2xl shrink-0">02</div>
+          <div>
+            <h3 class="font-bold text-dark text-lg mb-1">How AI makes this accessible to complete beginners</h3>
+            <p class="text-slate-500 text-sm">AI takes care of the nitty-gritty work while you focus on strategy and scaling — no experience required to get started.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 bg-slate-50 rounded-2xl p-7 border border-slate-100">
+          <div class="text-brand font-extrabold text-2xl shrink-0">03</div>
+          <div>
+            <h3 class="font-bold text-dark text-lg mb-1">How to scale your eBook portfolio</h3>
+            <p class="text-slate-500 text-sm">Learn the Build → Launch → Scale methodology that turns individual titles into a compounding portfolio of passive income assets.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 bg-slate-50 rounded-2xl p-7 border border-slate-100">
+          <div class="text-brand font-extrabold text-2xl shrink-0">04</div>
+          <div>
+            <h3 class="font-bold text-dark text-lg mb-1">The exit potential of your portfolio</h3>
+            <p class="text-slate-500 text-sm">Discover how single eBooks generate 4–5 figures monthly and how portfolios can be valued at 30–40x monthly cashflow — a real asset, not just side income.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 bg-slate-50 rounded-2xl p-7 border border-slate-100">
+          <div class="text-brand font-extrabold text-2xl shrink-0">05</div>
+          <div>
+            <h3 class="font-bold text-dark text-lg mb-1">The exact system used to generate over $3M</h3>
+            <p class="text-slate-500 text-sm">Get the full framework — refined over 6 years — that has helped over 10,000 people build publishing businesses from scratch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section id="instructor" class="py-20 px-6 bg-slate-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-10 md:flex gap-10 items-center">
+        <div class="shrink-0 mb-6 md:mb-0">
+          <div class="w-28 h-28 rounded-full bg-slate-200 flex items-center justify-center text-5xl">📖</div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Your Instructor</div>
+          <h3 class="text-2xl font-extrabold text-dark mb-3">Tommi Pedruzzi</h3>
+          <p class="text-slate-500 mb-4">Founder of Nespola.io, Tommi has been building wealth through book ownership and sales since age 22. He's generated over $3M using this exact system and has helped more than 10,000 people launch their own publishing businesses — all without writing a single word themselves.</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full">$3M+ Generated</span>
+            <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full">10,000+ Students</span>
+            <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full">6 Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">This workshop is for you if…</h2>
+        <p class="text-slate-500 text-lg">No experience needed — just the desire to build something that earns while you sleep.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="border border-slate-100 rounded-2xl p-7 hover:border-brand/30 hover:shadow-md transition">
+          <div class="text-3xl mb-4">🧑‍💼</div>
+          <h3 class="font-bold text-dark text-lg mb-2">You have a 9–5 job</h3>
+          <p class="text-slate-500 text-sm">You're employed but want an income stream that works around your schedule — not one that replaces it with another boss.</p>
+        </div>
+        <div class="border border-slate-100 rounded-2xl p-7 hover:border-brand/30 hover:shadow-md transition">
+          <div class="text-3xl mb-4">👩‍👧</div>
+          <h3 class="font-bold text-dark text-lg mb-2">You're a busy parent</h3>
+          <p class="text-slate-500 text-sm">Time is your most limited resource. This model was designed specifically for people who can only dedicate 1–2 hours a day.</p>
+        </div>
+        <div class="border border-slate-100 rounded-2xl p-7 hover:border-brand/30 hover:shadow-md transition">
+          <div class="text-3xl mb-4">🌍</div>
+          <h3 class="font-bold text-dark text-lg mb-2">You want location freedom</h3>
+          <p class="text-slate-500 text-sm">100% online, 100% remote. Run your publishing business from anywhere with a laptop and an internet connection.</p>
+        </div>
+        <div class="border border-slate-100 rounded-2xl p-7 hover:border-brand/30 hover:shadow-md transition">
+          <div class="text-3xl mb-4">🚀</div>
+          <h3 class="font-bold text-dark text-lg mb-2">You're a complete beginner</h3>
+          <p class="text-slate-500 text-sm">Never published anything before? Good. This workshop starts from zero and shows you exactly how to get your first eBook live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / REGISTER -->
+  <section id="register" class="py-24 px-6 bg-dark">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-block bg-brand/20 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide">
+        Free Live Workshop
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to build your eBook business?
+      </h2>
+      <p class="text-slate-400 text-lg mb-10">
+        Join thousands of beginners who are already generating passive income with AI publishing. Spots are limited — secure yours now.
+      </p>
+      <a href="#" class="inline-block bg-brand text-white font-bold text-xl px-10 py-5 rounded-2xl hover:bg-yellow-500 transition shadow-xl shadow-amber-900/30 mb-6">
+        I Want To Sign Up — Reserve My Spot →
+      </a>
+      <div class="flex flex-wrap justify-center gap-6 text-slate-400 text-sm mt-8">
+        <span>✓ 100% Free</span>
+        <span>✓ No experience needed</span>
+        <span>✓ Work from home</span>
+        <span>✓ AI-powered</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 py-8 px-6 text-center">
+    <p class="text-slate-500 text-sm">© 2026 PublishingOS / Nespola LTD — All rights reserved.</p>
+    <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Results are not typical. Individual outcomes depend on effort, experience, and market conditions. This workshop is for educational purposes only and does not guarantee earnings.</p>
+  </footer>
+
 </body>
 </html>
