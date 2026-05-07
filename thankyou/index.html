@@ -13,28 +13,29 @@
     .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; }
     .orange { color: rgb(248,122,34); }
-    .divider { border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+    .step-divider { border: none; border-top: 2px solid #1e293b; width: 100%; margin: 0; }
+    .inner-divider { border: none; border-top: 1px solid #cbd5e1; width: 100%; margin: 0; }
   </style>
 </head>
 <body class="bg-white text-slate-800">
 
-  <!-- SECTION 1 -->
-  <div class="max-w-4xl mx-auto px-5 py-8">
-
-    <!-- Hero text -->
-    <div class="text-center mb-6">
+  <!-- HERO -->
+  <div class="max-w-4xl mx-auto px-5 pt-8 pb-6">
+    <div class="text-center">
       <h1 class="text-3xl md:text-4xl font-extrabold text-black mb-4">Congratulations! You've booked your call</h1>
-      <h2 class="text-lg md:text-2xl font-semibold" style="color:rgb(80,70,130);">
+      <h2 class="text-lg md:text-2xl font-normal text-slate-700">
         Our goal with this page is to give you <strong>as much information as possible</strong> about this business, how our system works, our program, and how we can help you build a successful AI publishing business.
         <br /><br />
         Make sure you follow these steps to be fully informed, so when it's time for your meeting, we can focus on your game plan and goals
       </h2>
     </div>
+  </div>
 
-    <!-- Divider -->
-    <hr class="border-slate-200 my-6" />
+  <!-- STEP 1 DIVIDER -->
+  <hr class="step-divider" />
 
-    <!-- Step 1 -->
+  <!-- STEP 1 -->
+  <div class="max-w-4xl mx-auto px-5 py-8">
     <div class="text-center mb-4">
       <h2 class="text-2xl md:text-3xl font-extrabold">
         <i class="fas fa-arrow-circle-down orange mr-2"></i><strong> Step 1: Watch this PublishingOS </strong><br /><strong>Overview video</strong>
@@ -53,7 +54,6 @@
 
     <!-- Check Email + Image -->
     <div class="flex flex-col md:flex-row gap-6 mb-6">
-      <!-- Left: email steps -->
       <div class="md:w-5/12">
         <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-3">
           <i class="fas fa-envelope orange mr-2"></i><strong> Check Your Email!</strong>
@@ -67,15 +67,14 @@
           <p><strong>5</strong> - Respond to my question (This is for me to personally help you)</p>
         </div>
       </div>
-      <!-- Right: screenshot -->
       <div class="md:w-7/12">
         <img src="https://www.publishingos.io/hosted/images/cd/2d23672a364e0e8fdab99e37042c6a/Screenshot-2026-01-19-at-11.20.50-AM.png" alt="Email screenshot" class="w-full rounded-xl" />
       </div>
     </div>
 
     <!-- Also Be On The Lookout -->
-    <hr class="border-slate-200 my-6" />
-    <div class="mb-6">
+    <hr class="inner-divider my-6" />
+    <div class="mb-2">
       <h1 class="text-2xl md:text-3xl font-extrabold mb-4"><strong>Also, Be On The Lookout!!</strong></h1>
       <h2 class="text-base md:text-xl">
         One of my dedicated team member will be <strong><u>calling</u></strong> you from a (352) area code number.
@@ -85,9 +84,13 @@
         This is so we can best understand you, what you need, and give you personalized resources. As everything we do is tailored to you.
       </h2>
     </div>
+  </div>
 
-    <!-- Step 2 -->
-    <hr class="border-slate-200 my-6" />
+  <!-- STEP 2 DIVIDER -->
+  <hr class="step-divider" />
+
+  <!-- STEP 2 -->
+  <div class="max-w-4xl mx-auto px-5 py-8">
     <div class="text-center mb-4">
       <h1 class="text-2xl md:text-3xl font-extrabold"><strong>Step 2: Read The PublishingOS Program Breakdown</strong></h1>
     </div>
@@ -96,146 +99,146 @@
         Click this "<a href="https://docs.google.com/document/d/1BX8szofb3oybG52Djr0FX6cdHjkr9tOBL96X8yAmcUY/edit?tab=t.0" target="_blank" rel="noopener" class="orange underline">Document</a>" below to access the entire document going through the step by step breakdown of what it will look like once you join PublishingOS
       </h2>
     </div>
-    <div class="text-center mb-4">
+    <div class="text-center mb-6">
       <h1 class="text-2xl md:text-3xl font-extrabold">
         <i class="fas fa-chevron-circle-right orange mr-2"></i>
         <a href="https://docs.google.com/document/d/1BX8szofb3oybG52Djr0FX6cdHjkr9tOBL96X8yAmcUY/edit?tab=t.0" target="_blank" rel="noopener" class="orange"><strong>Document</strong></a>
       </h1>
     </div>
-
     <!-- Watch This First (desktop) -->
-    <div class="hidden md:block mb-4">
+    <div class="hidden md:block">
       <h2 class="text-xl md:text-2xl font-extrabold text-center mb-3"><strong>Watch This First</strong></h2>
       <div class="video-wrap">
         <iframe src="https://fast.wistia.net/embed/iframe/cjt0i5hhvx?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
       </div>
     </div>
-
   </div>
 
-  <!-- SECTION 2 — Step 3 FAQ Videos -->
-  <div class="divider py-8">
-    <div class="max-w-4xl mx-auto px-5">
+  <!-- STEP 3 DIVIDER -->
+  <hr class="step-divider" />
 
-      <div class="text-center mb-6">
-        <h1 class="text-2xl md:text-3xl font-extrabold"><strong>Step 3: </strong><strong>Get Your Burning Questions Answered</strong></h1>
+  <!-- STEP 3 -->
+  <div class="max-w-4xl mx-auto px-5 py-8">
+    <div class="text-center mb-6">
+      <h1 class="text-2xl md:text-3xl font-extrabold"><strong>Step 3: Get Your Burning Questions Answered</strong></h1>
+    </div>
+
+    <!-- Watch This First (mobile only) -->
+    <div class="block md:hidden mb-6">
+      <h2 class="text-xl font-extrabold text-center mb-3"><strong>Watch This First</strong></h2>
+      <div class="video-wrap">
+        <iframe src="https://fast.wistia.net/embed/iframe/cjt0i5hhvx?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
       </div>
+    </div>
 
-      <!-- Watch This First (mobile only) -->
-      <div class="block md:hidden mb-6">
-        <h2 class="text-xl font-extrabold text-center mb-3"><strong>Watch This First</strong></h2>
+    <!-- FAQ grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How much capital do You need?</strong></h2>
         <div class="video-wrap">
-          <iframe src="https://fast.wistia.net/embed/iframe/cjt0i5hhvx?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <iframe src="https://fast.wistia.net/embed/iframe/l1kvm0vf5g?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- FAQ grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How much capital do You need?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/l1kvm0vf5g?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How Much Time Do You Need?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/814169thqz?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How Much Time Do You Need?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/814169thqz?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What is the price?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/88wgbfcv0o?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How Long Does It Take To Get Results?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/9o7c4qhegl?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>The "Exit" opportunity</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/tj91e8s58n?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Addressing Online Reviews</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/f2ybl3ohiy?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Common Reasons Why Some Publishers Fail</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/g1o03hb03a?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How We Leverage AI</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/rqls3infc1?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What kind of books are we publishing?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/5b5hq1evve?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What are the net profits?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/ljs1p3babf?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>If AI does 80% of the work, what is the 20% we do?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/31pdgvl690?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How do Amazon KDP payouts work?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/iyuu523ssx?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="md:col-span-2 md:w-1/2 md:mx-auto">
-          <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Time needed for this business weekly?</strong></h2>
-          <div class="video-wrap">
-            <iframe src="https://fast.wistia.net/embed/iframe/wnyn9lczo7?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-        </div>
-
       </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What is the price?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/88wgbfcv0o?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How Long Does It Take To Get Results?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/9o7c4qhegl?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>The "Exit" opportunity</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/tj91e8s58n?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Addressing Online Reviews</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/f2ybl3ohiy?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Common Reasons Why Some Publishers Fail</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/g1o03hb03a?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How We Leverage AI</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/rqls3infc1?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What kind of books are we publishing?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/5b5hq1evve?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>What are the net profits?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/ljs1p3babf?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>If AI does 80% of the work, what is the 20% we do?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/31pdgvl690?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>How do Amazon KDP payouts work?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/iyuu523ssx?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 md:w-1/2 md:mx-auto">
+        <h2 class="text-lg md:text-xl font-extrabold text-center mb-3"><strong>Time needed for this business weekly?</strong></h2>
+        <div class="video-wrap">
+          <iframe src="https://fast.wistia.net/embed/iframe/wnyn9lczo7?autoplay=0&wmode=transparent" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- SECTION 3 — Step 4 Client Interviews + Meeting Checklist -->
-  <div class="max-w-4xl mx-auto px-5 py-8">
+  <!-- STEP 4 DIVIDER -->
+  <hr class="step-divider" />
 
+  <!-- STEP 4 -->
+  <div class="max-w-4xl mx-auto px-5 py-8">
     <div class="text-center mb-6">
       <h1 class="text-2xl md:text-3xl font-extrabold"><strong>Step 4: Hear directly from our real clients</strong></h1>
     </div>
 
     <!-- Meet Ricard -->
-    <hr class="border-slate-200 mb-6" />
+    <hr class="inner-divider mb-6" />
     <div class="flex flex-col md:flex-row gap-6 mb-8">
       <div class="md:w-1/2">
         <h1 class="text-2xl md:text-3xl font-extrabold text-center mb-3"><strong>Meet Ricard</strong></h1>
@@ -253,7 +256,7 @@
     </div>
 
     <!-- Meet James -->
-    <hr class="border-slate-200 mb-6" />
+    <hr class="inner-divider mb-6" />
     <div class="flex flex-col md:flex-row gap-6 mb-8">
       <div class="md:w-1/2">
         <h1 class="text-2xl md:text-3xl font-extrabold text-center mb-3"><strong>Meet James</strong></h1>
@@ -272,7 +275,7 @@
     </div>
 
     <!-- Meet Graciela -->
-    <hr class="border-slate-200 mb-6" />
+    <hr class="inner-divider mb-6" />
     <div class="flex flex-col md:flex-row gap-6 mb-8">
       <div class="md:w-1/2">
         <h1 class="text-2xl md:text-3xl font-extrabold text-center mb-3"><strong>Meet Graciela</strong></h1>
@@ -290,6 +293,7 @@
     </div>
 
     <!-- How To Get The Most Out Of Our Meeting -->
+    <hr class="inner-divider mb-6" />
     <div class="mb-8">
       <h1 class="text-2xl md:text-3xl font-extrabold text-center mb-6"><strong>How To Get The Most Out Of Our Meeting</strong></h1>
       <div class="space-y-4 text-base md:text-xl">
@@ -301,7 +305,6 @@
         <p><i class="fas fa-check orange mr-2"></i> You can cancel or reschedule your call, but if you do please let us know. Otherwise we will put you on our blacklist and you won't be able to book again (we do this to protect the system from bots).</p>
       </div>
     </div>
-
   </div>
 
   <!-- FOOTER -->
