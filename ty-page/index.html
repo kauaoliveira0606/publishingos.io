@@ -21,9 +21,32 @@
 </head>
 <body class="bg-gray-50 text-slate-800">
 
-  <!-- TOP BAR -->
-  <div class="bg-amber-500 py-3 px-4 text-center text-white text-sm font-semibold">
-    ⚠️ IMPORTANT: Complete all steps below to secure your spot and receive your bonuses
+  <!-- STICKY COUNTDOWN -->
+  <div class="sticky top-0 z-50 bg-slate-800 border-b border-slate-700 py-3 px-4">
+    <div class="max-w-2xl mx-auto flex items-center justify-center gap-1">
+      <p class="text-amber-400 text-xs font-semibold uppercase tracking-widest mr-4 hidden sm:block">Workshop starts in</p>
+      <div class="flex gap-3">
+        <div class="text-center min-w-[52px]">
+          <div id="cd-days" class="text-white text-2xl font-extrabold leading-none">00</div>
+          <div class="text-slate-400 text-xs mt-1">Days</div>
+        </div>
+        <div class="text-amber-400 text-2xl font-bold leading-none mt-0.5">:</div>
+        <div class="text-center min-w-[52px]">
+          <div id="cd-hours" class="text-white text-2xl font-extrabold leading-none">00</div>
+          <div class="text-slate-400 text-xs mt-1">Hours</div>
+        </div>
+        <div class="text-amber-400 text-2xl font-bold leading-none mt-0.5">:</div>
+        <div class="text-center min-w-[52px]">
+          <div id="cd-minutes" class="text-white text-2xl font-extrabold leading-none">00</div>
+          <div class="text-slate-400 text-xs mt-1">Minutes</div>
+        </div>
+        <div class="text-amber-400 text-2xl font-bold leading-none mt-0.5">:</div>
+        <div class="text-center min-w-[52px]">
+          <div id="cd-seconds" class="text-white text-2xl font-extrabold leading-none">00</div>
+          <div class="text-slate-400 text-xs mt-1">Seconds</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- HEADER -->
@@ -41,14 +64,6 @@
       </h1>
       <p class="text-slate-500 text-sm">Complete all the steps below to make sure you're fully prepared and don't miss out on your free bonuses.</p>
 
-      <!-- COUNTDOWN -->
-      <div class="mt-6 bg-slate-900 rounded-xl px-6 py-4 inline-block">
-        <p class="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-2">Workshop starts in</p>
-        <div id="countdown" class="text-white text-3xl font-extrabold tracking-tight">
-          00:00:00:00
-        </div>
-        <p class="text-slate-400 text-xs mt-1">Days &nbsp;·&nbsp; Hours &nbsp;·&nbsp; Minutes &nbsp;·&nbsp; Seconds</p>
-      </div>
     </div>
 
     <!-- STEP 1 -->
@@ -269,18 +284,13 @@
       const now = new Date();
       const diff = target - now;
       if (diff <= 0) {
-        document.getElementById('countdown').textContent = 'LIVE NOW!';
+        ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => document.getElementById(id).textContent = '00');
         return;
       }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      document.getElementById('countdown').textContent =
-        String(days).padStart(2,'0') + ':' +
-        String(hours).padStart(2,'0') + ':' +
-        String(minutes).padStart(2,'0') + ':' +
-        String(seconds).padStart(2,'0');
+      document.getElementById('cd-days').textContent    = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
+      document.getElementById('cd-hours').textContent   = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
