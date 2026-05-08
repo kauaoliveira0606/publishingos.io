@@ -35,24 +35,17 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: var(--dark);
-      color: #F0EBE0;
+      background: #111713;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 12px 32px;
+      justify-content: center;
+      gap: 12px;
+      padding: 9px 24px;
       font-family: 'Inter', sans-serif;
-    }
-    .sticky-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .sticky-dot {
-      width: 8px; height: 8px;
+      width: 7px; height: 7px;
       background: var(--orange);
       border-radius: 50%;
       flex-shrink: 0;
@@ -60,20 +53,28 @@
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      50% { opacity: 0.35; }
     }
-    .sticky-bar a {
-      background: var(--orange);
-      color: #fff;
-      font-size: 13px;
+    .sticky-label {
+      font-size: 11px;
       font-weight: 700;
-      padding: 8px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s;
-      white-space: nowrap;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
     }
-    .sticky-bar a:hover { background: var(--orange-dark); }
+    .sticky-sep {
+      width: 4px; height: 4px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .sticky-date {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
 
     /* HERO */
     .hero {
@@ -408,11 +409,10 @@
 
   <!-- STICKY BAR -->
   <div class="sticky-bar">
-    <div class="sticky-bar-left">
-      <span class="sticky-dot"></span>
-      FREE LIVE WORKSHOP &nbsp;·&nbsp; Learn to build an eBook business with AI
-    </div>
-    <a href="https://www.publishingos.io/application" target="_blank">Reserve My Spot →</a>
+    <span class="sticky-dot"></span>
+    <span class="sticky-label">Live Training</span>
+    <span class="sticky-sep"></span>
+    <span class="sticky-date">May 12th, 2026 &nbsp;·&nbsp; 7:00 PM EST</span>
   </div>
 
   <!-- HERO -->
