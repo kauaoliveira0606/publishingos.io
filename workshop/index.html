@@ -722,6 +722,52 @@
     function updateModalFlag(sel) { document.getElementById('modal-phone-flag').textContent = sel.options[sel.selectedIndex].dataset.flag; }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
+    async function submitHeroForm() {
+      const first_name = document.getElementById('h-first').value.trim();
+      const last_name  = document.getElementById('h-last').value.trim();
+      const email      = document.getElementById('h-email').value.trim();
+      const phone      = document.getElementById('h-phone').value.trim();
+      const msg        = document.getElementById('hero-msg');
+      const btn        = document.getElementById('hero-submit-btn');
+
+      if (!first_name || !last_name || !email || !phone) {
+        msg.style.display = 'block';
+        msg.style.background = '#fef2f2';
+        msg.style.color = '#b91c1c';
+        msg.textContent = 'Please fill out all fields.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Registering…';
+      msg.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ first_name, last_name, email, phone }),
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          msg.style.display = 'block';
+          msg.style.background = '#f0fdf4';
+          msg.style.color = '#15803d';
+          msg.textContent = "You're registered! Check your email for the access link.";
+          btn.textContent = "You're In ✓";
+        } else {
+          throw new Error(data.error || 'Registration failed');
+        }
+      } catch (err) {
+        msg.style.display = 'block';
+        msg.style.background = '#fef2f2';
+        msg.style.color = '#b91c1c';
+        msg.textContent = err.message || 'Something went wrong. Please try again.';
+        btn.disabled = false;
+        btn.textContent = 'RESERVE MY SPOT →';
+      }
+    }
+
     async function submitRegistration() {
       const first_name = document.getElementById('m-first').value.trim();
       const last_name  = document.getElementById('m-last').value.trim();
@@ -794,9 +840,9 @@
       <div class="form-card">
         <div class="form-card-title">Save your free spot.</div>
         <div class="form-card-sub">Register free below ↓</div>
-        <input class="form-field" type="text" placeholder="First name" required />
-        <input class="form-field" type="text" placeholder="Last name" required />
-        <input class="form-field" type="email" placeholder="Email address" required />
+        <input id="h-first" class="form-field" type="text" placeholder="First name" required />
+        <input id="h-last" class="form-field" type="text" placeholder="Last name" required />
+        <input id="h-email" class="form-field" type="email" placeholder="Email address" required />
         <div class="phone-wrapper">
           <div class="phone-country">
             <span class="phone-flag" id="phone-flag">🇺🇸</span>
@@ -820,14 +866,15 @@
               <option value="+971" data-flag="🇦🇪">+971</option>
             </select>
           </div>
-          <input class="phone-input" type="tel" placeholder="Best number for SMS reminder" required />
+          <input id="h-phone" class="phone-input" type="tel" placeholder="Best number for SMS reminder" required />
         </div>
         <script>
           function updateFlag(sel) {
             document.getElementById('phone-flag').textContent = sel.options[sel.selectedIndex].dataset.flag;
           }
         </script>
-        <button class="btn-submit" onclick="openModal()">
+        <div id="hero-msg" style="display:none;margin-bottom:12px;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;"></div>
+        <button class="btn-submit" id="hero-submit-btn" onclick="submitHeroForm()">
           RESERVE MY SPOT →
         </button>
         <p class="form-fine">By submitting, I consent to receive marketing emails and SMS messages from PublishingOS/Nespola.io. Reply STOP to opt out. Msg &amp; data rates may apply. Privacy · Terms</p>
