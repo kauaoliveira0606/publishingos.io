@@ -19,24 +19,38 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: 'Missing API config. Check environment variables in Vercel.' });
   }
 
-  const params = new URLSearchParams();
-  params.append('api_key', apiKey);
-  params.append('webinar_id', webinarId);
-  params.append('first_name', first_name);
-  params.append('last_name', last_name);
-  params.append('email', email);
-  if (phone) params.append('phone', phone);
-
   try {
-    const response = await fetch('https://api.webinarjam.com/webinarjam/register', {
+    // Step 1: get schedule_id automatically from webinar details
+    const detailsRes = await fetch('https://api.webinarjam.com/webinarjam/webinar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ api_key: apiKey, webinar_id: webinarId }).toString(),
+    });
+    const details = await detailsRes.json();
+    if (details.status !== 'success') {
+      return res.status(400).json({ error: 'Could not fetch webinar details: ' + JSON.stringify(details) });
+    }
+    const scheduleId = details.webinar.schedules[0].schedule;
+
+    // Step 2: register the attendee
+    const params = new URLSearchParams();
+    params.append('api_key', apiKey);
+    params.append('webinar_id', webinarId);
+    params.append('schedule_id', scheduleId);
+    params.append('first_name', first_name);
+    params.append('last_name', last_name);
+    params.append('email', email);
+    if (phone) params.append('phone', phone);
+
+    const regRes = await fetch('https://api.webinarjam.com/webinarjam/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: params.toString(),
     });
 
-    const text = await response.text();
+    const text = await regRes.text();
     let data;
-    try { data = JSON.parse(text); } catch { return res.status(500).json({ error: 'Invalid response from WebinarJam: ' + text }); }
+    try { data = JSON.parse(text); } catch { return res.status(500).json({ error: 'Invalid response: ' + text }); }
 
     if (data.status === 'success') {
       return res.status(200).json({ success: true });
@@ -44,6 +58,6 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: JSON.stringify(data) });
     }
   } catch (err) {
-    return res.status(500).json({ error: 'Fetch failed: ' + err.message });
+    return res.status(500).json({ error: 'Error: ' + err.message });
   }
 };
