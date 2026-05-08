@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  const apiKey = process.env.WEBINARJAM_API_KEY;
-  const webinarId = process.env.WEBINARJAM_WEBINAR_ID;
+  const apiKey = process.env.webinarjam_api_key;
+  const webinarId = process.env.webinarjam_webinar_id;
 
   try {
     const response = await fetch('https://api.webinarjam.com/webinarjam/register', {
