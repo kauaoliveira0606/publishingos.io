@@ -454,14 +454,53 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 80px 24px 60px; }
-      .photo-card { position: static; aspect-ratio: 4/3; }
-      .eligibility-grid, .process-grid { grid-template-columns: 1fr; }
-      .instructor-split { grid-template-columns: 1fr; }
-      .instructor-photo-wrap { order: -1; aspect-ratio: 3/2; }
+      /* global overflow guard */
+      body { overflow-x: hidden; }
+      * { max-width: 100%; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 80px 20px 60px;
+        gap: 32px;
+        max-width: 100%;
+      }
+      .photo-card {
+        position: static;
+        aspect-ratio: auto;
+        height: auto;
+      }
+      .photo-card img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .eligibility-grid { grid-template-columns: 1fr; gap: 28px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .instructor-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .instructor-photo-wrap {
+        order: -1;
+        aspect-ratio: auto;
+        height: auto;
+      }
+      .instructor-photo-wrap img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: top center;
+      }
       .instructor-tags { justify-content: flex-start; }
-      section { padding: 60px 24px; }
-      .sticky-bar { padding: 10px 20px; }
+      section { padding: 48px 20px; }
+      .sticky-bar { padding: 8px 16px; gap: 8px; }
+      .sticky-date { font-size: 10px; }
+      .container { padding: 0 4px; }
+      .form-card { padding: 24px 20px; }
+      .hero-headline { font-size: clamp(32px, 8vw, 52px); }
+      .learn-item { gap: 16px; }
+      .btn-lg { font-size: 15px; padding: 16px 24px; }
+      .modal { padding: 28px 20px 24px; }
     }
 
     /* MODAL */
