@@ -668,11 +668,11 @@
       <div class="modal-title">Save your free spot.</div>
       <div class="modal-sub">Enter your details to register for the free training.</div>
       <label class="modal-label">First Name <span>*</span></label>
-      <input class="modal-field" type="text" placeholder="Your first name" required />
+      <input id="m-first" class="modal-field" type="text" placeholder="Your first name" required />
       <label class="modal-label">Last Name <span>*</span></label>
-      <input class="modal-field" type="text" placeholder="Your last name" required />
+      <input id="m-last" class="modal-field" type="text" placeholder="Your last name" required />
       <label class="modal-label">Email <span>*</span></label>
-      <input class="modal-field" type="email" placeholder="you@email.com" required />
+      <input id="m-email" class="modal-field" type="email" placeholder="you@email.com" required />
       <label class="modal-label">Phone <span>*</span></label>
       <div class="modal-phone-wrapper">
         <div class="modal-phone-country">
@@ -697,9 +697,10 @@
             <option value="+971" data-flag="🇦🇪">+971</option>
           </select>
         </div>
-        <input class="modal-phone-input" type="tel" placeholder="(555) 123-4567" required />
+        <input id="m-phone" class="modal-phone-input" type="tel" placeholder="(555) 123-4567" required />
       </div>
-      <button class="modal-btn">SAVE MY FREE SPOT →</button>
+      <div id="modal-msg" style="display:none;margin-bottom:12px;padding:12px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;"></div>
+      <button class="modal-btn" id="modal-submit-btn" onclick="submitRegistration()">SAVE MY FREE SPOT →</button>
       <p class="modal-fine">By submitting, I consent to receive marketing emails and SMS messages from PublishingOS/Nespola.io. Reply STOP to opt out. Msg &amp; data rates may apply. Privacy · Terms</p>
       <div class="modal-footer-bar">
         <span class="modal-live-dot"></span>
@@ -709,11 +710,64 @@
   </div>
 
   <script>
-    function openModal() { document.getElementById('modal-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function openModal() {
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('modal-msg').style.display = 'none';
+      document.getElementById('modal-submit-btn').disabled = false;
+      document.getElementById('modal-submit-btn').textContent = 'SAVE MY FREE SPOT →';
+    }
     function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }
     function closeModalOutside(e) { if (e.target === document.getElementById('modal-overlay')) closeModal(); }
     function updateModalFlag(sel) { document.getElementById('modal-phone-flag').textContent = sel.options[sel.selectedIndex].dataset.flag; }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+    async function submitRegistration() {
+      const first_name = document.getElementById('m-first').value.trim();
+      const last_name  = document.getElementById('m-last').value.trim();
+      const email      = document.getElementById('m-email').value.trim();
+      const phone      = document.getElementById('m-phone').value.trim();
+      const msg        = document.getElementById('modal-msg');
+      const btn        = document.getElementById('modal-submit-btn');
+
+      if (!first_name || !last_name || !email || !phone) {
+        msg.style.display = 'block';
+        msg.style.background = '#fef2f2';
+        msg.style.color = '#b91c1c';
+        msg.textContent = 'Please fill out all fields.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Registering…';
+      msg.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ first_name, last_name, email, phone }),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          msg.style.display = 'block';
+          msg.style.background = '#f0fdf4';
+          msg.style.color = '#15803d';
+          msg.textContent = "You're registered! Check your email for the access link.";
+          btn.textContent = "You're In ✓";
+        } else {
+          throw new Error(data.error || 'Registration failed');
+        }
+      } catch (err) {
+        msg.style.display = 'block';
+        msg.style.background = '#fef2f2';
+        msg.style.color = '#b91c1c';
+        msg.textContent = err.message || 'Something went wrong. Please try again.';
+        btn.disabled = false;
+        btn.textContent = 'SAVE MY FREE SPOT →';
+      }
+    }
   </script>
 
   <!-- STICKY BAR -->
