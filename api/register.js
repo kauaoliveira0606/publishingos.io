@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     if (data.status === 'success') {
       return res.status(200).json({ success: true });
     } else {
-      return res.status(400).json({ error: data.message || JSON.stringify(data) });
+      return res.status(400).json({ error: JSON.stringify(data) });
     }
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Server error' });
