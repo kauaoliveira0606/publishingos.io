@@ -149,6 +149,52 @@
     }
     .form-field::placeholder { color: rgba(20,32,26,0.35); }
     .form-field:focus { border-color: rgba(248,122,34,0.5); }
+    .phone-wrapper {
+      display: flex;
+      align-items: stretch;
+      background: #F5F3EF;
+      border: 1px solid rgba(20,32,26,0.13);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .phone-wrapper:focus-within { border-color: rgba(248,122,34,0.5); }
+    .phone-country {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      border-right: 1px solid rgba(20,32,26,0.13);
+      background: transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .phone-country select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      cursor: pointer;
+      padding: 0;
+    }
+    .phone-flag { font-size: 18px; line-height: 1; }
+    .phone-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--dark);
+      font-family: 'Inter', sans-serif;
+    }
+    .phone-input::placeholder { color: rgba(20,32,26,0.35); }
     .btn-submit {
       width: 100%;
       background: var(--orange);
@@ -434,7 +480,36 @@
         <input class="form-field" type="text" placeholder="First name" required />
         <input class="form-field" type="text" placeholder="Last name" required />
         <input class="form-field" type="email" placeholder="Email address" required />
-        <input class="form-field" type="tel" placeholder="Phone number" required />
+        <div class="phone-wrapper">
+          <div class="phone-country">
+            <span class="phone-flag" id="phone-flag">🇺🇸</span>
+            <select id="country-code" onchange="updateFlag(this)">
+              <option value="+1" data-flag="🇺🇸">+1</option>
+              <option value="+44" data-flag="🇬🇧">+44</option>
+              <option value="+61" data-flag="🇦🇺">+61</option>
+              <option value="+64" data-flag="🇳🇿">+64</option>
+              <option value="+353" data-flag="🇮🇪">+353</option>
+              <option value="+1" data-flag="🇨🇦">+1 CA</option>
+              <option value="+27" data-flag="🇿🇦">+27</option>
+              <option value="+49" data-flag="🇩🇪">+49</option>
+              <option value="+33" data-flag="🇫🇷">+33</option>
+              <option value="+34" data-flag="🇪🇸">+34</option>
+              <option value="+39" data-flag="🇮🇹">+39</option>
+              <option value="+31" data-flag="🇳🇱">+31</option>
+              <option value="+55" data-flag="🇧🇷">+55</option>
+              <option value="+52" data-flag="🇲🇽">+52</option>
+              <option value="+91" data-flag="🇮🇳">+91</option>
+              <option value="+65" data-flag="🇸🇬">+65</option>
+              <option value="+971" data-flag="🇦🇪">+971</option>
+            </select>
+          </div>
+          <input class="phone-input" type="tel" placeholder="Best number for SMS reminder" required />
+        </div>
+        <script>
+          function updateFlag(sel) {
+            document.getElementById('phone-flag').textContent = sel.options[sel.selectedIndex].dataset.flag;
+          }
+        </script>
         <a href="https://www.publishingos.io/application" class="btn-submit" target="_blank">
           RESERVE MY SPOT →
         </a>
