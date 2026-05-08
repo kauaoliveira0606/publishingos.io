@@ -744,13 +744,13 @@
       msg.style.display = 'none';
 
       try {
-        const res = await fetch('/api/register', {
+        const res = await fetch('https://hooks.zapier.com/hooks/catch/12782757/4ym57xs/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ first_name, last_name, email, phone, phone_country }),
         });
         const data = await res.json();
-        if (res.ok && data.success) {
+        if (res.ok && (data.status === 'success' || data.success)) {
           window.location.href = 'https://www.publishingos.io/ty-page';
         } else {
           throw new Error(data.error || 'Registration failed');
@@ -787,14 +787,14 @@
       msg.style.display = 'none';
 
       try {
-        const res = await fetch('/api/register', {
+        const res = await fetch('https://hooks.zapier.com/hooks/catch/12782757/4ym57xs/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ first_name, last_name, email, phone, phone_country }),
         });
         const data = await res.json();
 
-        if (res.ok && data.success) {
+        if (res.ok && (data.status === 'success' || data.success)) {
           window.location.href = 'https://www.publishingos.io/ty-page';
         } else {
           throw new Error(data.error || 'Registration failed');
