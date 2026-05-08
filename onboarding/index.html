@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding — PublishingOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #F0EBE0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M50 8 L92 50 L50 92 L8 50 Z' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='50' cy='50' r='10' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='50' cy='30' r='5' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='50' cy='70' r='5' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='30' cy='50' r='5' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='70' cy='50' r='5' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='0' cy='0' r='10' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='100' cy='0' r='10' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='0' cy='100' r='10' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3Ccircle cx='100' cy='100' r='10' fill='none' stroke='%2314201A' stroke-width='0.8' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 100px 100px;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-orange {
+      display: inline-block;
+      background-color: rgb(248,122,34);
+      color: #fff;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .btn-orange:hover { background-color: #d96810; }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background-color: rgb(248,122,34);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-slate-100 py-4 px-6 text-center">
+    <span class="flex items-center justify-center gap-2">
+      <img src="/logo.png" alt="PublishingOS" class="w-8 h-8 rounded-xl" />
+      <span class="text-2xl font-extrabold text-slate-900">Publishing<span style="color:rgb(248,122,34);">OS</span></span>
+    </span>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 py-10">
+
+    <!-- WELCOME SECTION -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-6 text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Welcome to PublishingOS</h1>
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed mb-6">
+        You made the right decision. I'm personally committed to making sure you build a publishing portfolio that generates real, consistent income. I'll give you everything I have — all I ask is that you show up and do the work.
+      </p>
+      <a href="#schedule" class="btn-orange text-lg">Book Your Onboarding Call</a>
+    </div>
+
+    <!-- SCHEDULE ONBOARDING CALL -->
+    <div id="schedule" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Schedule Your Onboarding Call</h2>
+      <p class="text-slate-600 text-base mb-6">Your first call is where we get you fully set up — access to all tools, resources, and your personalized game plan. Don't skip this. It's the foundation for everything else.</p>
+      <div class="bg-slate-50 rounded-xl border border-slate-200 p-6">
+        <p class="text-base font-bold text-slate-900 mb-1">Book with the PublishingOS Team</p>
+        <p class="text-slate-500 text-sm mb-4">Your dedicated onboarding coordinator will walk you through everything. Pick a time that works best for you below.</p>
+        <!-- REPLACE with your calendar embed -->
+        <div class="text-center">
+          <a href="#" class="btn-orange">Pick a Time</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GETTING STARTED STEPS -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Here's How To Get Started</h2>
+      <p class="text-slate-500 text-base mb-8">Follow these steps in order. Each one builds on the last — don't skip ahead.</p>
+
+      <!-- STEP 1 -->
+      <div class="flex gap-5 mb-8">
+        <div class="step-number">1</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-extrabold text-slate-900 mb-1">Join the PublishingOS Community</h3>
+          <p class="text-slate-600 text-base mb-2">This is your home base. All of your training, resources, templates, and direct access to Tommi and the team live here. Make this the first thing you do.</p>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-4 text-sm font-semibold text-amber-800">
+            ⚠️ Do this before anything else.
+          </div>
+          <a href="#" class="btn-orange text-sm">Join the Community</a>
+        </div>
+      </div>
+
+      <hr class="border-slate-100 mb-8" />
+
+      <!-- STEP 2 -->
+      <div class="flex gap-5 mb-8">
+        <div class="step-number">2</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-extrabold text-slate-900 mb-1">Join the Private Group Chat</h3>
+          <p class="text-slate-600 text-base mb-2">This is where the day-to-day happens — live feedback, accountability, wins, and direct support. Once you're in, introduce yourself so the team knows you're here and ready to go.</p>
+          <div class="bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4 text-sm font-semibold text-red-700">
+            🚫 Don't just observe. Engage. The students who participate get the most out of this.
+          </div>
+          <a href="#" class="btn-orange text-sm">Join the Group Chat</a>
+        </div>
+      </div>
+
+      <hr class="border-slate-100 mb-8" />
+
+      <!-- STEP 3 -->
+      <div class="flex gap-5 mb-8">
+        <div class="step-number">3</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-extrabold text-slate-900 mb-1">Fill Out Your Onboarding Form</h3>
+          <p class="text-slate-600 text-base mb-2">This tells us where you're starting from, what your goals are, and how we can best support you. Be specific — the more detail you give us, the more tailored your experience will be.</p>
+          <a href="#" class="btn-orange text-sm">Fill Out Onboarding Form</a>
+        </div>
+      </div>
+
+      <hr class="border-slate-100 mb-8" />
+
+      <!-- STEP 4 -->
+      <div class="flex gap-5">
+        <div class="step-number">4</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-extrabold text-slate-900 mb-1">Get Your Personalized Publishing Game Plan</h3>
+          <p class="text-slate-600 text-base mb-4">Based on your onboarding form, we'll build out a custom roadmap for your publishing portfolio — niche selection, timeline, milestones, and exactly what to focus on first. This is your blueprint.</p>
+          <a href="#" class="btn-orange text-sm">Build My Game Plan</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-10 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-white font-extrabold text-xl mb-4">Publishing<span style="color:rgb(248,122,34);">OS</span></p>
+      <div class="flex justify-center gap-8 mb-6">
+        <a href="/terms" class="text-white text-xs font-semibold uppercase tracking-widest hover:text-slate-300 transition">Terms</a>
+        <a href="/privacy" class="text-white text-xs font-semibold uppercase tracking-widest hover:text-slate-300 transition">Privacy Policy</a>
+      </div>
+      <p class="text-slate-400 text-xs">© 2025 PublishingOS. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
