@@ -374,29 +374,42 @@
 
     /* INSTRUCTOR */
     .instructor { background: var(--beige); }
-    .instructor-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 48px;
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      box-shadow: 0 4px 24px rgba(20,32,26,0.06);
+    .instructor-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .instructor-photo {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: rgba(248,122,34,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 44px; flex-shrink: 0;
-    }
-    .instructor-info h3 {
+    .instructor-text { text-align: left; }
+    .instructor-name {
       font-family: 'Source Serif 4', serif;
-      font-size: 26px; font-weight: 700;
-      color: var(--dark); margin-bottom: 6px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--orange);
+      margin-bottom: 8px;
+      line-height: 1.1;
     }
-    .instructor-info p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .instructor-role {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 28px;
+    }
+    .instructor-text p { font-size: 15px; color: var(--dark); line-height: 1.8; margin-bottom: 18px; }
+    .instructor-photo-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .instructor-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
     .instructor-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
     .tag {
       background: rgba(248,122,34,0.08);
@@ -444,8 +457,9 @@
       .hero { grid-template-columns: 1fr; padding: 80px 24px 60px; }
       .photo-card { position: static; aspect-ratio: 4/3; }
       .eligibility-grid, .process-grid { grid-template-columns: 1fr; }
-      .instructor-card { flex-direction: column; align-items: center; text-align: center; }
-      .instructor-tags { justify-content: center; }
+      .instructor-split { grid-template-columns: 1fr; }
+      .instructor-photo-wrap { order: -1; aspect-ratio: 3/2; }
+      .instructor-tags { justify-content: flex-start; }
       section { padding: 60px 24px; }
       .sticky-bar { padding: 10px 20px; }
     }
@@ -846,11 +860,11 @@
   <!-- INSTRUCTOR -->
   <section class="instructor">
     <div class="container">
-      <div class="section-label">Your Instructor</div>
-      <div class="instructor-card">
-        <div class="instructor-photo">📖</div>
-        <div class="instructor-info">
-          <h3>Tommi Pedruzzi</h3>
+      <div class="instructor-split">
+        <!-- Left: Text -->
+        <div class="instructor-text">
+          <h2 class="instructor-name">Hey, I'm Tommi Pedruzzi</h2>
+          <div class="instructor-role">Your Host And Founder Of Nespola.Io</div>
           <p>Whether you discovered me on X (Twitter) or through my YouTube videos, I'm thrilled you're here.</p>
           <p>At 16, I read my first finance book — curious about building wealth, unaware that the real power was not just in reading books, but in owning them and selling them online (even if I wasn't the one writing).</p>
           <p>By 22, I wasn't just learning from books — I was making a living from them. Today, I share with entrepreneurs and professionals around the world how to transform information into an asset.</p>
@@ -861,6 +875,10 @@
             <span class="tag">6 Years Experience</span>
           </div>
           <button class="btn-lg" onclick="openModal()">Join the free workshop →</button>
+        </div>
+        <!-- Right: Photo -->
+        <div class="instructor-photo-wrap">
+          <img src="../images/tommi.jpg" alt="Tommi Pedruzzi" />
         </div>
       </div>
     </div>
