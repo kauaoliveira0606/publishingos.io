@@ -21,7 +21,54 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    #countdown { font-variant-numeric: tabular-nums; }
+    .sticky-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #111713;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 9px 24px;
+      font-family: 'Inter', sans-serif;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .sticky-dot {
+      width: 7px; height: 7px;
+      background: rgb(248,122,34);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .sticky-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgb(248,122,34);
+    }
+    .sticky-sep {
+      width: 4px; height: 4px;
+      background: #ffffff;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .sticky-date {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    @media (max-width: 640px) {
+      .sticky-bar { padding: 8px 16px; gap: 8px; }
+      .sticky-date { font-size: 10px; }
+    }
     @keyframes pulse-glow {
       0%, 100% { opacity: 1; box-shadow: 0 0 8px 2px rgba(251,146,60,0.5); }
       50% { opacity: 0.85; box-shadow: 0 0 20px 6px rgba(251,146,60,0.9); }
@@ -32,34 +79,14 @@
     }
   </style>
 </head>
-<body class="text-slate-800">
+<body class="text-slate-800" style="padding-top:36px;">
 
-  <!-- STICKY COUNTDOWN -->
-  <div class="sticky top-0 z-50 bg-amber-500 py-2.5 px-4">
-    <div class="max-w-2xl mx-auto flex flex-col items-center gap-1.5">
-      <p class="text-white/80 text-xs font-semibold uppercase tracking-widest">Workshop starts in</p>
-      <div class="flex items-center gap-1.5">
-        <div class="bg-white/20 rounded-lg px-3 py-1 text-center min-w-[48px]">
-          <div id="cd-days" class="text-white text-lg font-extrabold leading-none">00</div>
-          <div class="text-white/70 text-xs mt-0.5">Days</div>
-        </div>
-        <div class="text-white font-bold text-lg">:</div>
-        <div class="bg-white/20 rounded-lg px-3 py-1 text-center min-w-[48px]">
-          <div id="cd-hours" class="text-white text-lg font-extrabold leading-none">00</div>
-          <div class="text-white/70 text-xs mt-0.5">Hours</div>
-        </div>
-        <div class="text-white font-bold text-lg">:</div>
-        <div class="bg-white/20 rounded-lg px-3 py-1 text-center min-w-[48px]">
-          <div id="cd-minutes" class="text-white text-lg font-extrabold leading-none">00</div>
-          <div class="text-white/70 text-xs mt-0.5">Min</div>
-        </div>
-        <div class="text-white font-bold text-lg">:</div>
-        <div class="bg-white/20 rounded-lg px-3 py-1 text-center min-w-[48px]">
-          <div id="cd-seconds" class="text-white text-lg font-extrabold leading-none">00</div>
-          <div class="text-white/70 text-xs mt-0.5">Sec</div>
-        </div>
-      </div>
-    </div>
+  <!-- STICKY BAR -->
+  <div class="sticky-bar">
+    <span class="sticky-dot"></span>
+    <span class="sticky-label">Live Training</span>
+    <span class="sticky-sep"></span>
+    <span class="sticky-date">May 12th @ 6PM EST</span>
   </div>
 
   <!-- PROGRESS BAR -->
@@ -281,37 +308,6 @@
     </div>
   </footer>
 
-  <script>
-    // Countdown to next Tuesday at 6PM EST
-    function getNextTuesdayEST() {
-      const now = new Date();
-      const estOffset = -5 * 60; // EST offset in minutes
-      const utcOffset = now.getTimezoneOffset();
-      const estNow = new Date(now.getTime() + (utcOffset + estOffset) * 60000);
-      const day = estNow.getDay(); // 0=Sun,1=Mon,2=Tue,...
-      const daysUntilTuesday = (2 - day + 7) % 7 || 7;
-      const target = new Date(estNow);
-      target.setDate(estNow.getDate() + daysUntilTuesday);
-      target.setHours(18, 0, 0, 0);
-      return new Date(target.getTime() - (utcOffset + estOffset) * 60000);
-    }
-
-    function updateCountdown() {
-      const target = getNextTuesdayEST();
-      const now = new Date();
-      const diff = target - now;
-      if (diff <= 0) {
-        ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => document.getElementById(id).textContent = '00');
-        return;
-      }
-      document.getElementById('cd-days').textContent    = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
-      document.getElementById('cd-hours').textContent   = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
-      document.getElementById('cd-minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
-      document.getElementById('cd-seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 
 </body>
 </html>
