@@ -36,7 +36,7 @@ module.exports = async function handler(req, res) {
     const params = new URLSearchParams();
     params.append('api_key', apiKey);
     params.append('webinar_id', webinarId);
-    params.append('schedule_id', scheduleId);
+    params.append('schedule', scheduleId);
     params.append('first_name', first_name);
     params.append('last_name', last_name);
     params.append('email', email);
