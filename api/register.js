@@ -13,27 +13,28 @@ export default async function handler(req, res) {
   const webinarId = process.env.webinarjam_webinar_id;
 
   try {
+    const params = new URLSearchParams();
+    params.append('api_key', apiKey);
+    params.append('webinar_id', webinarId);
+    params.append('first_name', first_name);
+    params.append('last_name', last_name);
+    params.append('email', email);
+    if (phone) params.append('phone', phone);
+
     const response = await fetch('https://api.webinarjam.com/webinarjam/register', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        api_key: apiKey,
-        webinar_id: webinarId,
-        first_name,
-        last_name,
-        email,
-        phone: phone || '',
-      }),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString(),
     });
 
     const data = await response.json();
 
     if (data.status === 'success') {
-      return res.status(200).json({ success: true, live_room_url: data.user?.live_room_url });
+      return res.status(200).json({ success: true });
     } else {
-      return res.status(400).json({ error: data.message || 'Registration failed' });
+      return res.status(400).json({ error: data.message || JSON.stringify(data) });
     }
   } catch (err) {
-    return res.status(500).json({ error: 'Server error' });
+    return res.status(500).json({ error: err.message || 'Server error' });
   }
 }
