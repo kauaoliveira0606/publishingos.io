@@ -750,11 +750,7 @@
         });
         const data = await res.json();
         if (res.ok && data.success) {
-          msg.style.display = 'block';
-          msg.style.background = '#f0fdf4';
-          msg.style.color = '#15803d';
-          msg.textContent = "You're registered! Check your email for the access link.";
-          btn.textContent = "You're In ✓";
+          window.location.href = 'https://www.publishingos.io/ty-page';
         } else {
           throw new Error(data.error || 'Registration failed');
         }
@@ -797,11 +793,7 @@
         const data = await res.json();
 
         if (res.ok && data.success) {
-          msg.style.display = 'block';
-          msg.style.background = '#f0fdf4';
-          msg.style.color = '#15803d';
-          msg.textContent = "You're registered! Check your email for the access link.";
-          btn.textContent = "You're In ✓";
+          window.location.href = 'https://www.publishingos.io/ty-page';
         } else {
           throw new Error(data.error || 'Registration failed');
         }
