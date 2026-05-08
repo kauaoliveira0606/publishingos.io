@@ -727,6 +727,7 @@
       const last_name  = document.getElementById('h-last').value.trim();
       const email      = document.getElementById('h-email').value.trim();
       const phone      = document.getElementById('h-phone').value.trim();
+      const phone_country = document.getElementById('country-code').value;
       const msg        = document.getElementById('hero-msg');
       const btn        = document.getElementById('hero-submit-btn');
 
@@ -746,7 +747,7 @@
         const res = await fetch('/api/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ first_name, last_name, email, phone }),
+          body: JSON.stringify({ first_name, last_name, email, phone, phone_country }),
         });
         const data = await res.json();
         if (res.ok && data.success) {
@@ -769,6 +770,7 @@
       const last_name  = document.getElementById('m-last').value.trim();
       const email      = document.getElementById('m-email').value.trim();
       const phone      = document.getElementById('m-phone').value.trim();
+      const phone_country = document.querySelector('.modal-phone-country select').value;
       const msg        = document.getElementById('modal-msg');
       const btn        = document.getElementById('modal-submit-btn');
 
@@ -788,7 +790,7 @@
         const res = await fetch('/api/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ first_name, last_name, email, phone }),
+          body: JSON.stringify({ first_name, last_name, email, phone, phone_country }),
         });
         const data = await res.json();
 

@@ -6,7 +6,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { first_name, last_name, email, phone } = req.body || {};
+  const { first_name, last_name, email, phone, phone_country } = req.body || {};
 
   if (!first_name || !last_name || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -40,7 +40,11 @@ module.exports = async function handler(req, res) {
     params.append('first_name', first_name);
     params.append('last_name', last_name);
     params.append('email', email);
-    if (phone) params.append('phone', phone);
+    if (phone) {
+      const countryCode = (phone_country || '+1').replace('+', '');
+      const digits = phone.replace(/\D/g, '');
+      params.append('phone', '+' + countryCode + digits);
+    }
 
     const regRes = await fetch('https://api.webinarjam.com/webinarjam/register', {
       method: 'POST',
