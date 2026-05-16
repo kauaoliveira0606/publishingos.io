@@ -42,7 +42,15 @@
   <!-- HERO -->
   <div class="max-w-4xl mx-auto px-5 pt-8 pb-6">
     <div class="text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-black mb-4">Congratulations! You've booked your call</h1>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-black mb-4">Congratulations<span id="lead-name"></span>! You've booked your call</h1>
+      <script>
+        (function() {
+          var name = new URLSearchParams(window.location.search).get('name');
+          if (name) {
+            document.getElementById('lead-name').textContent = ' ' + decodeURIComponent(name);
+          }
+        })();
+      </script>
       <h2 class="text-lg md:text-xl font-normal text-slate-700">
         Our goal with this page is to give you <strong>as much information as possible</strong> about this business, how our system works, our program, and how we can help you build a successful AI publishing business.
         <br /><br />
