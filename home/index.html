@@ -63,9 +63,43 @@
     <!-- TYPEFORM -->
     <div id="typeform-section" class="mb-12">
       <p class="text-center text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">Apply Below.</p>
-      <div data-tf-live="01KGNNW87S5K3DAX3YMXSACR3A"></div>
-      <script src="//embed.typeform.com/next/embed.js"></script>
+
+      <!-- Countdown overlay -->
+      <div id="countdown-overlay" style="background:#F0EBE0;border:2px solid #e2d9c8;border-radius:16px;padding:48px 24px;text-align:center;">
+        <p class="text-slate-600 text-base md:text-lg font-semibold mb-2">Watch the full video above before applying.</p>
+        <p class="text-slate-500 text-sm mb-6">The application will unlock in:</p>
+        <div id="countdown-display" style="font-size:3.5rem;font-weight:900;color:#1e293b;letter-spacing:0.05em;line-height:1;">5:00</div>
+      </div>
+
+      <!-- Typeform (hidden until countdown ends) -->
+      <div id="typeform-embed" style="display:none;">
+        <div data-tf-live="01KGNNW87S5K3DAX3YMXSACR3A"></div>
+        <script src="//embed.typeform.com/next/embed.js"></script>
+      </div>
     </div>
+
+    <script>
+      (function() {
+        var total = 5 * 60;
+        var display = document.getElementById('countdown-display');
+        var overlay = document.getElementById('countdown-overlay');
+        var embed   = document.getElementById('typeform-embed');
+
+        function tick() {
+          var m = Math.floor(total / 60);
+          var s = total % 60;
+          display.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+          if (total <= 0) {
+            overlay.style.display = 'none';
+            embed.style.display = 'block';
+          } else {
+            total--;
+            setTimeout(tick, 1000);
+          }
+        }
+        tick();
+      })();
+    </script>
 
     <!-- TESTIMONIALS -->
     <div class="text-center mb-8">
